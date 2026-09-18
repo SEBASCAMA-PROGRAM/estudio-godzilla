@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estudio Godzilla</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F0EA; --bg2:#FFFFFF; --ink:#1C1814; --ink2:#5C554D; --line:#DDD6CC;
+  --copper:#B2531B; --candy:#7A2C0A; --gold:#D9A441; --alu:#9A948C; --duv:#1A1714;
+  --ok:#2E7D4F; --warn:#B8860B; --bad:#B23A2E;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15120F; --bg2:#1F1B17; --ink:#EFE8DE; --ink2:#B4AB9F; --line:#3A332C;
+    --copper:#E0763A; --candy:#F0A46E; --gold:#E2B75B; --alu:#8A847B; --duv:#0B0908;
+    --ok:#6FCF97; --warn:#E3B341; --bad:#F08A7E;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15120F; --bg2:#1F1B17; --ink:#EFE8DE; --ink2:#B4AB9F; --line:#3A332C;
+  --copper:#E0763A; --candy:#F0A46E; --gold:#E2B75B; --alu:#8A847B; --duv:#0B0908;
+  --ok:#6FCF97; --warn:#E3B341; --bad:#F08A7E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-block:0 80px;padding-inline:20px}
+a{color:var(--copper)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.02;margin:0}
+h1{font-size:clamp(46px,8vw,96px);font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+h2{font-size:clamp(30px,4.2vw,46px);font-weight:600;text-transform:uppercase;letter-spacing:.005em}
+h3{font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0 0 14px;max-width:70ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
+.mono{font-family:var(--mono)}
+.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+section{padding-block:56px 0;border-top:1px solid var(--line);margin-top:56px}
+section:first-of-type{border-top:0;margin-top:0}
+.lead{font-size:19px;color:var(--ink);max-width:62ch}
+.muted{color:var(--ink2)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:end;padding-block:40px 0}
+.hero img{width:100%;max-width:100%;display:block;border-radius:6px}
+.hero .side{display:flex;flex-direction:column;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.kpi{border:1px solid var(--line);background:var(--bg2);padding:12px 14px;border-radius:6px}
+.kpi b{display:block;font-family:var(--display);font-size:32px;line-height:1;color:var(--copper)}
+.kpi span{font-size:12.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--ink2);margin-top:8px;font-family:var(--mono)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:18px 18px 14px}
+.card h3{margin-bottom:8px}
+.card p{font-size:15px;margin-bottom:8px}
+.strip{display:block;width:100%;max-width:100%;border-radius:6px}
+.shots{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:10px}
+.shots div{font-size:12.5px;line-height:1.35;color:var(--ink2)}
+.shots b{display:block;color:var(--ink);font-family:var(--display);font-size:17px;text-transform:uppercase}
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--bg2)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:500;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.price{font-family:var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+td.right,th.right{text-align:right}
+tr.total td{font-weight:600;background:var(--bg)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid var(--line);color:var(--ink2);margin-left:6px;vertical-align:middle}
+.tag.pro{border-color:var(--copper);color:var(--copper)}
+.tag.smart{border-color:var(--ok);color:var(--ok)}
+.tag.est{border-color:var(--warn);color:var(--warn)}
+/* plan svg */
+.plan{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:10px;overflow-x:auto}
+.plan svg{display:block;width:100%;height:auto;max-width:100%;font-family:var(--mono)}
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px;margin-top:14px;font-size:14px}
+.legend div{display:flex;gap:10px;align-items:flex-start}
+.legend i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--copper);color:#fff;font:600 12px/22px var(--display);text-align:center;font-style:normal}
+.legend small{display:block;color:var(--ink2);font-size:12.5px}
+.callout{border-left:4px solid var(--copper);background:var(--bg2);padding:14px 18px;border-radius:0 6px 6px 0;margin:18px 0}
+.callout.warn{border-color:var(--warn)}
+.callout p:last-child{margin-bottom:0}
+ol.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:10px;max-width:none}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+ol.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:30px;line-height:1;color:var(--copper);font-weight:700}
+ol.steps li b{display:block;font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.02em}
+ol.steps li span{font-size:14.5px;color:var(--ink2)}
+ul.tight{margin:0 0 12px;padding-left:20px}
+ul.tight li{margin-bottom:5px}
+.renders{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.renders img{width:100%;max-width:100%;display:block;border-radius:6px}
+.renders .wide{grid-column:1/-1}
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.refs a{display:block;text-decoration:none;color:var(--ink);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.refs b{font-family:var(--display);font-size:20px;text-transform:uppercase;display:block}
+.refs small{color:var(--ink2);font-size:12.5px}
+.refs .n{font-family:var(--mono);font-size:12px;color:var(--copper)}
+.foot{font-size:13px;color:var(--ink2);margin-top:40px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:820px){
+  .hero,.grid2,.renders{grid-template-columns:1fr}
+  .grid3,.refs{grid-template-columns:1fr 1fr}
+  .shots{grid-template-columns:repeat(4,1fr)}
+  .kpis{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:520px){
+  .grid3,.refs,.legend,.kpis{grid-template-columns:1fr}
+  .shots{grid-template-columns:repeat(2,1fr)}
+  .kpi b{font-size:26px}
+}
+@media (prefers-reduced-motion:no-preference){ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:2px} }
+img{max-width:100%}</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <figure>
+    <img src="img/render_bts.jpg" alt="Simulación física del estudio: camión COE candy cobre sobre tornamesa, caja de luz cenital de 20x20 pies, Light Dome lateral, ventana 8x8 y cámara en slider">
+    <figcaption>Simulación de luz calculada por trazado de rayos (Blender Cycles). Estudio 30 × 45 ft, techo 16 ft, caja de luz cenital 20 × 20 ft. El volumen del camión es un modelo a escala del COE crew cab dually, no el modelo final.</figcaption>
+  </figure>
+  <div class="side">
+    <div class="eyebrow">JP Motor Trend · Proyecto 1951 Chevrolet COE Crew Cab</div>
+    <h1>Estudio Godzilla</h1>
+    <p class="lead">Propuesta de estudio de video en bodega para producir reels al nivel de RK Motors: ciclorama blanco, piso espejo, una sola luz cenital gigante y cámara lenta sobre el candy cobre.</p>
+    <div class="kpis">
+      <div class="kpi"><b>30×45</b><span>pies recomendados</span></div>
+      <div class="kpi"><b>16 ft</b><span>techo mínimo</span></div>
+      <div class="kpi"><b>$19k</b><span>equipo Smart · Pro $40k</span></div>
+    </div>
+    <p class="muted" style="font-size:13.5px;margin-top:6px">Versión 1 · 18 sep 2026 · precios verificados esa fecha en fabricante, B&amp;H y Adorama. Los marcados <span class="tag est">~ est.</span> no se pudieron confirmar.</p>
+  </div>
+</section>
+
+<!-- ================= 1. QUÉ HACE RK ================= -->
+<section>
+  <div class="eyebrow">01 · La referencia</div>
+  <h2>Qué hace exactamente el reel de RK Motors</h2>
+  <p class="lead">El reel de referencia (GMC 100 de 1959, 136 mil likes) dura 34 segundos, es vertical 1080 × 1920 a 30 fps y son 9 planos. Ningún plano dura más de 5 segundos y la cámara nunca está quieta: siempre hay un slider, un gimbal o la tornamesa girando.</p>
+  <img class="strip" src="img/rk_strip.jpg" alt="Siete cuadros del reel de RK Motors: rueda, motor, emblema, interior, cama, plano general en tornamesa y frente">
+  <div class="shots">
+    <div><b>0–3 s</b>Rueda a ras de piso, slider lateral. Softbox visible arriba.</div>
+    <div><b>3–7 s</b>Motor, lente macro, movimiento mínimo.</div>
+    <div><b>7–11 s</b>Emblema y guardafango: el reflejo "camina" sobre la pintura.</div>
+    <div><b>11–15 s</b>Interior por la puerta abierta, gimbal entrando.</div>
+    <div><b>15–20 s</b>Cama desde arriba, cámara en pluma.</div>
+    <div><b>20–30 s</b>Plano general: cámara fija, tornamesa gira, piso espejo.</div>
+    <div><b>30–34 s</b>Frente y logo. Corte a negro.</div>
+  </div>
+
+  <div class="grid2" style="margin-top:28px">
+    <div>
+      <h3>Los cinco ingredientes del look</h3>
+      <ul class="tight">
+        <li><b>Una sola fuente enorme arriba.</b> Una caja de luz de unos 20 × 20 ft colgada sobre el vehículo. Es lo que produce la franja blanca continua en el techo y los reflejos limpios en la pintura. Se deja ver en cuadro a propósito.</li>
+        <li><b>Ciclorama blanco con esquina curva.</b> No hay línea entre pared y piso, así que el fondo desaparece.</li>
+        <li><b>Piso gris pulido tipo espejo.</b> El camión se refleja; con blanco puro el piso "quema" en video, por eso es gris.</li>
+        <li><b>Tornamesa.</b> En el plano general la cámara no se mueve: gira el camión.</li>
+        <li><b>Óptica y control de reflejos.</b> Polarizador circular en todos los planos, banderas negras para pintar el reflejo, y macro para los detalles.</li>
+      </ul>
+      <p class="muted">RK Motors no publica nada sobre su estudio. Solo se sabe que tienen un "digital media studio" propio dentro de 60,000 sq ft en Charlotte, con un fotógrafo y un videógrafo de planta. Todo lo anterior sale de analizar el reel cuadro a cuadro.</p>
+    </div>
+    <div>
+      <h3>Cuentas que hacen lo mismo</h3>
+      <div class="refs" style="grid-template-columns:1fr 1fr">
+        <a href="https://www.instagram.com/rkmotorscharlotte/" target="_blank" rel="noopener"><b>RK Motors</b><span class="n">44.6K</span><small>La referencia: cyc blanco, piso espejo, cenital visible.</small></a>
+        <a href="https://www.instagram.com/velocityrestorations/" target="_blank" rel="noopener"><b>Velocity Restorations</b><span class="n">338K</span><small>Mismo nicho de trucks clásicos (Bronco, C10, F-100). El más parecido.</small></a>
+        <a href="https://www.instagram.com/ecdautodesign/" target="_blank" rel="noopener"><b>ECD Auto Design</b><span class="n">168K</span><small>Fondo blanco + historia de taller. Están en Kissimmee, FL.</small></a>
+        <a href="https://www.instagram.com/ringbrothers/" target="_blank" rel="noopener"><b>Ringbrothers</b><span class="n">377K</span><small>Nivel SEMA: reveals y fabricación.</small></a>
+        <a href="https://www.instagram.com/kindigitdesign/" target="_blank" rel="noopener"><b>Kindig-it Design</b><span class="n">771K</span><small>Showroom propio, reveals de entrega.</small></a>
+        <a href="https://www.instagram.com/roadstershop/" target="_blank" rel="noopener"><b>Roadster Shop</b><span class="n">499K</span><small>Builds y highlights por modelo.</small></a>
+      </div>
+      <p class="muted" style="margin-top:10px;font-size:13.5px">Seguidores leídos el 18 sep 2026. Para Godzilla el modelo a copiar es RK (look) + Velocity (nicho) + ECD (historia de taller, que ya está en el Libro Maestro).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. EL ESPACIO ================= -->
+<section>
+  <div class="eyebrow">02 · El espacio</div>
+  <h2>20 × 20 no alcanza para el COE. Alcanza para el 70 % del reel.</h2>
+  <p class="lead">El COE crew cab dually mide unos 23 ft de largo, 8 ft de ancho y 7.5 ft de alto. En 20 × 20 solo cabe en diagonal, sin distancia de cámara. Los planos de detalle sí salen; el plano general con aire alrededor y el softbox en cuadro, no.</p>
+
+  <div class="grid2">
+    <div class="plan">
+      <svg viewBox="0 0 520 300" role="img" aria-label="Comparación a escala: el camión de 23 pies dentro de un cuadro de 20 por 20 pies y dentro de un estudio de 30 por 45 pies">
+        <defs>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--bad)" stroke-width="1" opacity=".5"/></pattern>
+        </defs>
+        <!-- 20x20 : scale 5px/ft -->
+        <g transform="translate(20,40)">
+          <text x="0" y="-16" font-size="12" fill="var(--ink)" font-weight="600">20 × 20 ft (400 sq ft)</text>
+          <rect x="0" y="0" width="100" height="100" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <g transform="translate(50,50) rotate(-45)">
+            <rect x="-57.5" y="-20" width="115" height="40" rx="4" fill="url(#hatch)" stroke="var(--bad)" stroke-width="1.5"/>
+            <text x="0" y="4" font-size="9" text-anchor="middle" fill="var(--bad)">23 × 8 ft</text>
+          </g>
+          <text x="0" y="122" font-size="10.5" fill="var(--bad)">Cabe solo en diagonal: 2.6 ft sobran en cada punta.</text>
+          <text x="0" y="136" font-size="10.5" fill="var(--bad)">Cero distancia de cámara para el plano general.</text>
+          <text x="0" y="158" font-size="10.5" fill="var(--ok)">Sí: ruedas, motor, emblemas, interior, cama, pintura.</text>
+        </g>
+        <!-- 30x45 : scale 5px/ft -->
+        <g transform="translate(230,40)">
+          <text x="0" y="-16" font-size="12" fill="var(--ink)" font-weight="600">30 × 45 ft (1,350 sq ft) · recomendado</text>
+          <rect x="0" y="0" width="225" height="150" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="0" y1="0" x2="225" y2="0" stroke="var(--copper)" stroke-width="4"/>
+          <text x="112" y="-4" font-size="9" text-anchor="middle" fill="var(--copper)">CICLORAMA</text>
+          <circle cx="112" cy="62" r="55" fill="none" stroke="var(--alu)" stroke-dasharray="3 3"/>
+          <g transform="translate(112,62) rotate(-35)">
+            <rect x="-57.5" y="-20" width="115" height="40" rx="4" fill="var(--copper)" opacity=".85"/>
+            <text x="0" y="4" font-size="9" text-anchor="middle" fill="#fff">23 × 8 ft</text>
+          </g>
+          <rect x="62" y="12" width="100" height="100" fill="none" stroke="var(--gold)" stroke-dasharray="4 3"/>
+          <text x="164" y="20" font-size="9" fill="var(--gold)">softbox 20×20</text>
+          <g stroke="var(--ink2)" stroke-width="1">
+            <line x1="112" y1="117" x2="112" y2="140"/><line x1="108" y1="140" x2="116" y2="140"/>
+          </g>
+          <text x="118" y="140" font-size="9" fill="var(--ink2)">cámara a 13–15 ft</text>
+          <text x="0" y="172" font-size="10.5" fill="var(--ok)">Plano general 3/4 y perfil completo con aire. Softbox en cuadro.</text>
+          <text x="0" y="186" font-size="10.5" fill="var(--ink2)">Tornamesa Ø 22 ft (opcional) centrada bajo el softbox.</text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <h3>Tres formas de resolverlo</h3>
+      <div class="card" style="margin-bottom:10px"><h3 style="font-size:18px">A · Bahía de detalle 20 × 20 <span class="tag smart">mínimo</span></h3>
+        <p>Cyc en una pared, piso epoxi, softbox 12 × 12 sobre la mitad del camión que toque. Sirve para el 70 % de los planos del reel y para todos los reels de proceso. El plano general se hace afuera o en otra parte de la bodega con tela negra.</p></div>
+      <div class="card" style="margin-bottom:10px;border-color:var(--copper)"><h3 style="font-size:18px">B · Estudio completo 30 × 45 · techo 16 ft <span class="tag pro">recomendado</span></h3>
+        <p>Es el look RK al 100 %. La caja de luz cuelga a 12.5 ft, el camión mide 7.5 ft y quedan 5 ft de aire para que la luz "se abra". Las paredes laterales quedan a 11 ft del camión, suficiente para la Light Dome y la ventana 8 × 8 fuera de cuadro.</p></div>
+      <div class="card"><h3 style="font-size:18px">C · Híbrido</h3>
+        <p>Construir la bahía 20 × 20 ahora (detalle) y reservar los 30 × 45 contiguos sin construir: piso epoxi corrido y 3 rollos de papel Savage de 107" como fondo temporal para el plano general. Cuando se venda Godzilla, se termina el cyc.</p></div>
+      <div class="callout warn"><p><b>Lo que hay que medir esta semana:</b> altura libre real del techo (vigas, luminarias, puertas de rollo), dónde está el tablero eléctrico y si el piso tiene pendiente o juntas de dilatación en la zona del cyc.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. PLANO DE LUCES ================= -->
+<section>
+  <div class="eyebrow">03 · Plano de iluminación</div>
+  <h2>Dónde va cada luz</h2>
+  <p class="lead">Planta a escala del estudio 30 × 45 ft con el camión en 3/4 sobre la tornamesa. Todo es luz LED continua (video), nada de flash. La regla del Libro Maestro se cumple con la luz 2: el candy tiene que "caminar", así que la Light Dome va en pluma con ruedas y se mueve durante la toma.</p>
+
+  <div class="plan">
+    <svg viewBox="0 0 760 460" role="img" aria-label="Planta del estudio con la posición numerada de cada luz, la cámara y el camión">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink2)"/></marker>
+        <radialGradient id="glow"><stop offset="0" stop-color="var(--gold)" stop-opacity=".35"/><stop offset="1" stop-color="var(--gold)" stop-opacity="0"/></radialGradient>
+      </defs>
+      <!-- room: 45 ft wide x 30 ft deep, scale 14 px/ft, origin (60,40) -->
+      <g transform="translate(60,40)">
+        <rect x="0" y="0" width="630" height="420" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/>
+        <!-- cyc wall with coved corners -->
+        <path d="M0,42 Q0,0 42,0 L588,0 Q630,0 630,42" fill="none" stroke="var(--copper)" stroke-width="6"/>
+        <text x="315" y="-8" font-size="12" text-anchor="middle" fill="var(--copper)" font-weight="600">CICLORAMA BLANCO · cove radio 3 ft · pared 12–14 ft de alto</text>
+        <!-- dims -->
+        <text x="315" y="438" font-size="11" text-anchor="middle" fill="var(--ink2)">45 ft</text>
+        <text x="-8" y="214" font-size="11" text-anchor="end" fill="var(--ink2)" transform="rotate(-90 -8 214)">30 ft</text>
+        <!-- overhead softbox 20x20 -->
+        <rect x="175" y="60" width="280" height="280" fill="url(#glow)" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="7 4"/>
+        <text x="315" y="76" font-size="11" text-anchor="middle" fill="var(--gold)" font-weight="600">1 · CAJA DE LUZ CENITAL 20 × 20 ft · a 12.5 ft</text>
+        <!-- turntable -->
+        <circle cx="315" cy="200" r="154" fill="none" stroke="var(--alu)" stroke-width="1.5"/>
+        <text x="455" y="352" font-size="10" fill="var(--alu)">tornamesa Ø 22 ft</text>
+        <!-- truck 23x8 ft at 3/4 -->
+        <g transform="translate(315,200) rotate(-32)">
+          <rect x="-161" y="-56" width="322" height="112" rx="10" fill="var(--copper)" opacity=".9"/>
+          <rect x="60" y="-50" width="95" height="100" rx="8" fill="none" stroke="#fff" opacity=".7"/>
+          <rect x="-150" y="-46" width="150" height="92" rx="6" fill="none" stroke="#fff" opacity=".5"/>
+          <text x="0" y="5" font-size="12" text-anchor="middle" fill="#fff" font-weight="600">GODZILLA · 23 × 8 ft</text>
+          <text x="108" y="-58" font-size="9" text-anchor="middle" fill="var(--ink)">frente</text>
+        </g>
+        <!-- 2: Light Dome on boom, camera-left -->
+        <g transform="translate(70,300)">
+          <circle r="22" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/>
+          <line x1="22" y1="0" x2="120" y2="-45" stroke="var(--ink2)" stroke-width="1" marker-end="url(#arr)"/>
+          <circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">2</text>
+          <text x="-2" y="42" font-size="10" text-anchor="middle" fill="var(--ink)">Dome 150 en pluma</text>
+          <text x="-2" y="54" font-size="10" text-anchor="middle" fill="var(--ink2)">8 ft alto · se mueve</text>
+        </g>
+        <!-- 3: 8x8 window camera-right -->
+        <g transform="translate(560,150) rotate(20)">
+          <rect x="-56" y="-6" width="112" height="12" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/>
+          <circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">3</text>
+        </g>
+        <text x="560" y="190" font-size="10" text-anchor="middle" fill="var(--ink)">Ventana 8 × 8 ft</text>
+        <text x="560" y="202" font-size="10" text-anchor="middle" fill="var(--ink2)">difusión, 4–6 ft alto</text>
+        <!-- 4: floppies negative fill -->
+        <g transform="translate(140,120) rotate(-30)">
+          <rect x="-28" y="-4" width="56" height="8" fill="var(--duv)"/>
+          <circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">4</text>
+        </g>
+        <g transform="translate(120,190) rotate(-70)">
+          <rect x="-28" y="-4" width="56" height="8" fill="var(--duv)"/>
+        </g>
+        <text x="96" y="235" font-size="10" text-anchor="middle" fill="var(--ink)">Floppies 4 × 4 negros</text>
+        <text x="96" y="247" font-size="10" text-anchor="middle" fill="var(--ink2)">pintan el reflejo</text>
+        <!-- 5: interior (inside truck) -->
+        <g transform="translate(372,160)">
+          <circle r="12" fill="var(--gold)"/><text y="4" font-size="12" text-anchor="middle" fill="var(--duv)" font-weight="700">5</text>
+        </g>
+        <!-- 6: rim tubes behind -->
+        <g transform="translate(470,48)">
+          <rect x="-30" y="-3" width="60" height="6" rx="3" fill="var(--gold)"/>
+          <circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">6</text>
+        </g>
+        <g transform="translate(200,48)"><rect x="-30" y="-3" width="60" height="6" rx="3" fill="var(--gold)"/></g>
+        <text x="470" y="30" font-size="10" text-anchor="middle" fill="var(--ink2)">tubos 4 ft cálidos, contra</text>
+        <!-- 7: cyc wash -->
+        <g transform="translate(40,60)"><circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">7</text></g>
+        <g transform="translate(590,60)"><circle r="12" fill="var(--copper)"/><text y="4" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">7</text></g>
+        <!-- camera + slider -->
+        <g transform="translate(250,392)">
+          <rect x="-50" y="-4" width="100" height="8" rx="3" fill="var(--ink)"/>
+          <rect x="-9" y="-16" width="18" height="12" fill="var(--ink)"/>
+          <line x1="0" y1="-16" x2="60" y2="-160" stroke="var(--ink2)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+          <text x="0" y="24" font-size="10" text-anchor="middle" fill="var(--ink)">CÁMARA · slider 3 ft · 13–15 ft del camión</text>
+        </g>
+        <!-- gimbal orbit path -->
+        <path d="M120,330 Q315,420 510,330" fill="none" stroke="var(--ink2)" stroke-width="1" stroke-dasharray="2 4"/>
+        <text x="315" y="372" font-size="9.5" text-anchor="middle" fill="var(--ink2)">órbita del gimbal para los planos de rueda y flanco</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <div><i>1</i><div><b>Caja de luz cenital 20 × 20 ft.</b> Marco Snap-A-Part 12 × 12 unido a otro (o 20 × 20 de tubo) con Full Grid Cloth, colgado a 12.5 ft. Encima, dos lámparas apuntando en cruz desde esquinas opuestas para que el panel quede parejo. <small>PRO: 2 × Aputure STORM 1200x · SMART: 2 × Aputure LS 600c Pro II.</small></div></div>
+      <div><i>2</i><div><b>Luz de pintura móvil.</b> LS 600c Pro II con Light Dome 150 en pluma Avenger con contrapeso y base con ruedas. A 8 ft de alto, 45° sobre el flanco. Durante la toma se recorre 6 ft para que el reflejo cruce la curva del guardafango. <small>Es la "luz grande y móvil" que pide el capítulo 7 del Libro Maestro.</small></div></div>
+      <div><i>3</i><div><b>Ventana lateral 8 × 8 ft.</b> Marco Kupo con grid cloth y una Amaran 300c detrás. Dibuja la franja blanca larga sobre puertas y cama en los planos de flanco. <small>Se apaga en el plano general si compite con el cenital.</small></div></div>
+      <div><i>4</i><div><b>Relleno negativo.</b> Dos floppies 4 × 4 y una tela negra 20 × 20 en la pared frontal. La pintura candy refleja todo lo que hay en el estudio: el negro es lo que da la profundidad marrón en sombra que exige el capítulo 7.</div></div>
+      <div><i>5</i><div><b>Interior.</b> Lantern 90 a 2900 K dentro de la cabina más un mat Amaran F21c pegado al techo interior, ambos al 5–10 %. El LED cálido propio del camión debe dominar; estas luces solo levantan las costuras y el aluminio. <small>Minis MC Pro en rines, motor y cama del air ride.</small></div></div>
+      <div><i>6</i><div><b>Contras.</b> Dos tubos PavoTube 30 a 3200 K en el piso detrás del camión, apuntando a los guardafangos traseros. Separan el cobre del blanco del cyc.</div></div>
+      <div><i>7</i><div><b>Lavado del cyc</b> <span class="tag">opcional</span>. Dos Amaran 200x a 45° hacia la pared para que el fondo quede blanco puro en el plano general. Con el cenital de 20 × 20 casi siempre sobra.</div></div>
+      <div><i>C</i><div><b>Cámara.</b> Slider motorizado de 3 ft sobre trípode fluido a 3 ft de alto para ruedas y flanco; gimbal para entrar por la puerta y para la cama; cámara fija para el giro de tornamesa.</div></div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:28px">
+    <div class="plan">
+      <svg viewBox="0 0 520 250" role="img" aria-label="Corte lateral con alturas: techo 16 pies, lámparas a 15.5, caja de luz a 12.5, camión 7.5, cámara a 3">
+        <g transform="translate(50,20)">
+          <!-- scale 12 px/ft ; ground at y=192 -->
+          <line x1="0" y1="0" x2="440" y2="0" stroke="var(--ink)" stroke-width="2"/>
+          <text x="444" y="4" font-size="10" fill="var(--ink2)">techo 16 ft</text>
+          <line x1="0" y1="192" x2="440" y2="192" stroke="var(--ink)" stroke-width="2"/>
+          <text x="444" y="196" font-size="10" fill="var(--ink2)">piso epoxi</text>
+          <!-- cyc wall at right with cove -->
+          <path d="M400,192 Q436,192 436,156 L436,0" fill="none" stroke="var(--copper)" stroke-width="5"/>
+          <!-- lamps -->
+          <g fill="var(--ink)"><rect x="150" y="4" width="22" height="10"/><rect x="290" y="4" width="22" height="10"/></g>
+          <line x1="161" y1="14" x2="260" y2="42" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="301" y1="14" x2="200" y2="42" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="232" y="12" font-size="9.5" text-anchor="middle" fill="var(--ink2)">lámparas a 15.5 ft, en cruz</text>
+          <!-- softbox at 12.5 ft => y = 192-150 = 42 -->
+          <rect x="110" y="40" width="240" height="4" fill="var(--gold)"/>
+          <text x="230" y="58" font-size="10" text-anchor="middle" fill="var(--gold)" font-weight="600">caja de luz 20 ft · a 12.5 ft</text>
+          <!-- truck: 7.5 ft tall => 90 px; 23 ft long => 276 px -->
+          <g transform="translate(92,102)">
+            <rect x="0" y="0" width="276" height="90" rx="8" fill="var(--copper)" opacity=".9"/>
+            <rect x="176" y="0" width="100" height="90" rx="8" fill="none" stroke="#fff" opacity=".6"/>
+            <circle cx="60" cy="90" r="16" fill="var(--duv)"/><circle cx="235" cy="90" r="16" fill="var(--duv)"/>
+            <text x="138" y="50" font-size="11" text-anchor="middle" fill="#fff" font-weight="600">COE · 7.5 ft alto</text>
+          </g>
+          <text x="230" y="80" font-size="9.5" text-anchor="middle" fill="var(--ink2)">5 ft de aire para que la luz se abra</text>
+          <!-- Dome on boom at 8 ft => y=96 -->
+          <circle cx="40" cy="96" r="16" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/>
+          <line x1="40" y1="112" x2="40" y2="192" stroke="var(--ink2)"/>
+          <text x="40" y="128" font-size="9.5" text-anchor="middle" fill="var(--ink2)">Dome 8 ft</text>
+          <!-- camera at 3 ft => y=156 -->
+          <rect x="6" y="150" width="16" height="10" fill="var(--ink)"/>
+          <line x1="14" y1="160" x2="14" y2="192" stroke="var(--ink2)"/>
+          <text x="14" y="176" font-size="9.5" text-anchor="middle" fill="var(--ink2)">cam 3 ft</text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <h3>Por qué 16 ft de techo</h3>
+      <p>La caja de luz tiene que colgar por encima del camión con aire de sobra, y las lámparas van encima de la caja. Si el techo mide 12 ft, el softbox queda pegado al techo de la cabina y la luz cae dura, con el punto caliente de cada lámpara marcado en la pintura. Con 14 ft se puede trabajar poniendo las lámparas a los lados del marco en vez de arriba. Con 16 ft o más se replica RK.</p>
+      <h3 style="margin-top:14px">Ajustes de cámara para el candy</h3>
+      <ul class="tight">
+        <li>4K 60p para bajar a 30 en edición (el reel de RK está a 30 fps). Obturador 1/120.</li>
+        <li>S-Cinetone para entregar rápido; S-Log3 solo si el editor va a gradear.</li>
+        <li>ISO 800, f/4 a f/5.6. Con 1,200 W arriba sobra luz: el VND baja la exposición.</li>
+        <li>Polarizador circular girado plano por plano: quita el reflejo del piso cuando estorba y lo deja en la pintura.</li>
+        <li>Balance fijo en 5600 K para exterior y 3200 K para interior. Nunca automático.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. RENDERS ================= -->
+<section>
+  <div class="eyebrow">04 · Simulación</div>
+  <h2>Cómo se vería</h2>
+  <p class="lead">Las cuatro imágenes son cálculo físico de luz con el plano anterior: caja cenital 20 × 20, Dome 150 en pluma, ventana 8 × 8, floppy negro, tubos de contra, piso epoxi gris y ciclorama con cove. El material del camión es candy metálico con barniz. Sirven para validar el plan de luces, no para presentar el camión.</p>
+  <div class="renders">
+    <figure><img src="img/render_hero.jpg" alt="Render vertical 9:16: plano general con la caja de luz en cuadro y el reflejo en el piso"><figcaption>Plano general 9:16, cámara a 3 ft y 20 mm. La caja de luz entra en cuadro como en RK.</figcaption></figure>
+    <figure><img src="img/render_wheel.jpg" alt="Render de detalle de rueda trasera con guardafango candy"><figcaption>Rueda trasera dually a ras de piso, 45 mm. El reflejo del cenital cruza el guardafango.</figcaption></figure>
+    <figure class="wide"><img src="img/render_top.jpg" alt="Vista cenital ortográfica del estudio con el camión, la tornamesa y las luces"><figcaption>Planta cenital calculada: se ve el rectángulo del softbox proyectado en el piso, la Dome a la izquierda, la ventana 8 × 8 a la derecha y el slider abajo.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ================= 5. EQUIPO ================= -->
+<section>
+  <div class="eyebrow">05 · Equipo y precios</div>
+  <h2>Qué comprar, en dos niveles</h2>
+  <p class="lead"><span class="tag pro">PRO</span> es el nivel RK Motors. <span class="tag smart">SMART</span> da el mismo look en pantalla de celular con la mitad del dinero. Un dato clave: Aputure descontinuó el LS 1200d Pro y el 600d Pro en 2025; sus reemplazos son STORM 1200x y STORM 400x, y el LS 600c Pro II está en liquidación a 40 % menos.</p>
+
+  <h3>Resumen</h3>
+  <div class="tbl" style="margin-bottom:22px"><table>
+    <thead><tr><th>Escenario</th><th>Equipo (luz + grip + cámara)</th><th>Infraestructura</th><th class="right">Total USD</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag smart">SMART</span> + bahía 20 × 20</td><td class="price">18,901</td><td class="price">7,740–10,440</td><td class="price right">26,600–29,300</td></tr>
+      <tr><td><span class="tag smart">SMART</span> + estudio 30 × 45</td><td class="price">18,901</td><td class="price">28,158–45,208</td><td class="price right">47,100–64,100</td></tr>
+      <tr><td><span class="tag pro">PRO</span> + estudio 30 × 45</td><td class="price">40,359</td><td class="price">28,158–45,208</td><td class="price right">68,500–85,600</td></tr>
+      <tr><td>Tornamesa (cualquier escenario B, fase 2)</td><td></td><td class="price">8,000–25,000</td><td class="price right">+8,000–25,000</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Luces</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Función</th><th>PRO</th><th class="right">USD</th><th>SMART</th><th class="right">USD</th></tr></thead>
+    <tbody>
+      <tr><td>1 · Cenital (2 lámparas)</td><td><a href="https://aputure.com/en-US/products/storm-1200x" target="_blank" rel="noopener">Aputure STORM 1200x</a> × 2</td><td class="price right">5,980</td><td><a href="https://aputure.com/en-US/products/ls-600c-pro-ii" target="_blank" rel="noopener">Aputure LS 600c Pro II</a> × 2 (oferta)</td><td class="price right">2,980</td></tr>
+      <tr><td>2 · Luz de pintura</td><td>LS 600c Pro II + <a href="https://aputure.com/en-US/products/light-dome-150" target="_blank" rel="noopener">Light Dome 150</a></td><td class="price right">1,759</td><td>Amaran 300c + Light Dome 150</td><td class="price right">724</td></tr>
+      <tr><td>3 · Ventana 8 × 8</td><td>Amaran 300c</td><td class="price right">455</td><td>Amaran 300c</td><td class="price right">455</td></tr>
+      <tr><td>5 · Interior</td><td>Lantern 90 + <a href="https://amarancreators.com/products/amaran-f22c" target="_blank" rel="noopener">Amaran F22c</a> + MC Pro kit 8</td><td class="price right">2,937</td><td>Lantern 90 + Amaran F21c + MC kit 4</td><td class="price right">1,237</td></tr>
+      <tr><td>6 · Contras</td><td>Nanlite PavoTube II 30XR kit 4</td><td class="price right">1,759</td><td>Nanlite PavoTube II 30C kit 4 <span class="tag est">~</span></td><td class="price right">720</td></tr>
+      <tr><td>7 · Lavado cyc (opcional)</td><td>Amaran Halo 200x × 2</td><td class="price right">498</td><td>se usa el cenital</td><td class="price right">0</td></tr>
+      <tr class="total"><td>Total luces</td><td></td><td class="price right">13,388</td><td></td><td class="price right">6,116</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:22px">Modificadores y grip</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ítem</th><th>PRO</th><th class="right">USD</th><th>SMART</th><th class="right">USD</th></tr></thead>
+    <tbody>
+      <tr><td>Marco cenital</td><td><a href="https://www.msegrip.com/collections/overhead-butterfly-frames" target="_blank" rel="noopener">Matthews Snap-A-Part 12 × 12</a> × 2 (forma 24 × 12) + grid cloth 12 × 12 × 2 <span class="tag est">~</span></td><td class="price right">3,576</td><td>Snap-A-Part 12 × 12 × 1 + grid cloth <span class="tag est">~</span></td><td class="price right">1,788</td></tr>
+      <tr><td>Ventana lateral</td><td><a href="https://kupogrip.com/kupo-8ft-x-8ft-butterfly-frame-kit/" target="_blank" rel="noopener">Kupo 8 × 8 frame kit</a> + grid cloth 8 × 8 <span class="tag est">~</span></td><td class="price right">1,035</td><td>Westcott Scrim Jim Cine 8 × 8 kit (marco + telas)</td><td class="price right">750</td></tr>
+      <tr><td>Banderas negras</td><td>Matthews floppy 4 × 4 × 2</td><td class="price right">582</td><td>Floppy genérico + trapo × 2 <span class="tag est">~</span></td><td class="price right">394</td></tr>
+      <tr><td>Tela negra 20 × 20</td><td>Canvas Grip duvetyne FR</td><td class="price right">495</td><td>igual</td><td class="price right">495</td></tr>
+      <tr><td>Stands</td><td>Matthews C-stand 40" × 4 + Hollywood Combo triple × 2</td><td class="price right">2,222</td><td>Impact Turtle C-stand × 4 + Autopole/Sky Hook</td><td class="price right">897</td></tr>
+      <tr><td>Pluma para la Dome</td><td>Avenger D650 Junior Boom + Menace arm <span class="tag est">~</span></td><td class="price right">609</td><td>Avenger D650 <span class="tag est">~</span></td><td class="price right">310</td></tr>
+      <tr><td>Colgado del cenital</td><td>4 puntos con polea y cadena, tubo de 1.25" <span class="tag est">~</span></td><td class="price right">600</td><td>igual <span class="tag est">~</span></td><td class="price right">600</td></tr>
+      <tr class="total"><td>Total grip</td><td></td><td class="price right">9,119</td><td></td><td class="price right">5,234</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:22px">Cámara, óptica y movimiento</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ítem</th><th>PRO</th><th class="right">USD</th><th>SMART</th><th class="right">USD</th></tr></thead>
+    <tbody>
+      <tr><td>Cuerpo</td><td><a href="https://www.bhphotovideo.com/c/product/1894322-REG/sony_ilme_fx3a_fx3_full_frame_cinema_camera.html" target="_blank" rel="noopener">Sony FX3A</a>. Es la cámara de este tipo de reel: vertical nativo, sin límite de grabación, ventilador, S-Log3.</td><td class="price right">4,298</td><td>Sony a7 IV. 4K 60 con recorte, 10 bits, mismo color.</td><td class="price right">1,998</td></tr>
+      <tr><td>Zoom principal</td><td>Sony 24-70 GM II <span class="tag est">~</span></td><td class="price right">2,398</td><td>Sigma 24-70 DG DN II Art</td><td class="price right">1,319</td></tr>
+      <tr><td>Gran angular (plano general)</td><td>Sony 16-35 GM II <span class="tag est">~</span></td><td class="price right">2,650</td><td>se usa el 24 mm del zoom</td><td class="price right">0</td></tr>
+      <tr><td>Macro (pintura, emblemas, rines)</td><td>Sony 90 mm f/2.8 Macro G</td><td class="price right">1,098</td><td>Sony 90 mm f/2.8 Macro G</td><td class="price right">1,098</td></tr>
+      <tr><td>Polarizador 82 mm</td><td>PolarPro QuartzLine CP <span class="tag est">~</span></td><td class="price right">249</td><td>B+W XS-Pro Kaesemann <span class="tag est">~</span></td><td class="price right">150</td></tr>
+      <tr><td>ND variable 82 mm</td><td>PolarPro VND 2-5</td><td class="price right">250</td><td>PolarPro VND 2-5</td><td class="price right">250</td></tr>
+      <tr><td>Gimbal</td><td><a href="https://store.dji.com/product/dji-rs-4-pro" target="_blank" rel="noopener">DJI RS 4 Pro Combo</a> + Focus Pro Creator (foco LiDAR)</td><td class="price right">2,098</td><td>DJI RS 4 Pro</td><td class="price right">869</td></tr>
+      <tr><td>Slider motorizado</td><td>Edelkrone SliderPLUS v6</td><td class="price right">668</td><td>Zeapon Micro3 M700 (manual)</td><td class="price right">419</td></tr>
+      <tr><td>Trípode fluido</td><td>Sachtler 75/2 aluminio + Ace XL</td><td class="price right">946</td><td>Benro S8 Pro + patas <span class="tag est">~</span></td><td class="price right">450</td></tr>
+      <tr><td>Monitor</td><td>SmallHD Ultra 5</td><td class="price right">2,249</td><td>Atomos Shinobi II</td><td class="price right">349</td></tr>
+      <tr><td>Audio (arranque Cummins, air ride, puertas)</td><td>Zoom F3 + Sennheiser MKE 600 + Rode Wireless PRO</td><td class="price right">948</td><td>Zoom F3 + MKE 600</td><td class="price right">649</td></tr>
+      <tr class="total"><td>Total cámara</td><td></td><td class="price right">17,852</td><td></td><td class="price right">7,551</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:22px">Infraestructura del estudio</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ítem</th><th>Opción B · 30 × 45 ft</th><th class="right">USD</th><th>Opción A · 20 × 20 ft</th><th class="right">USD</th></tr></thead>
+    <tbody>
+      <tr><td>Piso epoxi 100 % sólidos, gris medio, alto brillo</td><td>1,350 sq ft × $9–12 (Tampa 2026)</td><td class="price right">12,150–16,200</td><td>400 sq ft × $9–12</td><td class="price right">3,600–4,800</td></tr>
+      <tr><td>Ciclorama drywall con cove de 3 ft</td><td>Pared 45 ft + 2 esquinas, contratista <span class="tag est">~</span></td><td class="price right">12,000–25,000</td><td>Pared 20 ft + 1 esquina <span class="tag est">~</span></td><td class="price right">2,500–4,000</td></tr>
+      <tr><td>Pintura de cyc</td><td>Pro Cyc Cyclorama White 5 gal × 2</td><td class="price right">958</td><td>Sherwin-Williams ProMar 200 flat 5 gal</td><td class="price right">240</td></tr>
+      <tr><td>Electricidad</td><td>6 circuitos 20 A + 1 de 240 V 30 A <span class="tag est">~</span></td><td class="price right">2,250</td><td>4 circuitos 20 A <span class="tag est">~</span></td><td class="price right">1,000</td></tr>
+      <tr><td>Oscurecimiento</td><td>Tapar tragaluces y puertas, telas negras</td><td class="price right">800</td><td>igual</td><td class="price right">400</td></tr>
+      <tr><td>Tornamesa (fase 2)</td><td><a href="https://carousel-usa.com/" target="_blank" rel="noopener">Carousel USA 18 ft</a> instalada, o importada 5 t / 5 m + instalación <span class="tag est">~</span></td><td class="price right">8,000–25,000</td><td>no cabe</td><td class="price right">0</td></tr>
+      <tr class="total"><td>Total infraestructura (sin tornamesa)</td><td></td><td class="price right">28,158–45,208</td><td></td><td class="price right">7,740–10,440</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout"><p><b>Dónde está el look si hay que recortar.</b> LS 600c Pro II a través del marco 12 × 12 con grid cloth, polarizador en el lente, piso epoxi gris y un floppy negro. Eso son unos $3,500 en luz y grip y es el 80 % de RK Motors. La FX3A, el monitor SmallHD y la tornamesa son el último 20 %.</p></div>
+</section>
+
+<!-- ================= 6. ENERGÍA ================= -->
+<section>
+  <div class="eyebrow">06 · Energía</div>
+  <h2>Circuitos antes que lámparas</h2>
+  <div class="grid3">
+    <div class="card"><h3>Consumo real</h3><p>STORM 1200x: 1,550 W, 12.9 A a 120 V. LS 600c Pro II: 720 W, 6 A. Amaran 300c: 350 W. Cuatro tubos: 300 W. Un cenital PRO con dos 1200x son 3,100 W.</p></div>
+    <div class="card"><h3>Regla</h3><p>Un circuito de 20 A dedicado por cada lámpara de 1,200 W. Dos 600c caben en un solo 20 A. Todos los accesorios (tubos, mats, minis) en otro. Nunca compartir con el compresor del taller ni con el aire acondicionado.</p></div>
+    <div class="card"><h3>Baterías y generador</h3><p>Una EcoFlow Delta Pro ($1,899) corre un 1200x unas 2 horas: sirve de respaldo y para el día de calle, no como fuente diaria. Generador dentro de la bodega, no: monóxido y ruido en el audio del motor.</p></div>
+  </div>
+  <p class="muted" style="margin-top:14px">Tomas cada 10 ft en las cuatro paredes y dos en el techo junto a los puntos de colgado del cenital. Un electricista en Florida cobra unos $250–500 por circuito <span class="tag est">~</span>.</p>
+</section>
+
+<!-- ================= 7. GUION ================= -->
+<section>
+  <div class="eyebrow">07 · El reel de Godzilla</div>
+  <h2>El mismo esqueleto de 34 s, con lo que solo Godzilla tiene</h2>
+  <div class="grid2">
+    <div>
+      <div class="tbl"><table>
+        <thead><tr><th>Seg.</th><th>Plano</th><th>Cómo</th></tr></thead>
+        <tbody>
+          <tr><td class="num">0–3</td><td>Rin GTX negro dually a ras de piso</td><td>Slider lateral, 45 mm, Dome cruzando el guardafango 1946</td></tr>
+          <tr><td class="num">3–7</td><td>Cummins 5.9 con el hood abierto</td><td>Macro 90, gimbal lento, tubo cálido dentro del vano</td></tr>
+          <tr><td class="num">7–11</td><td>El candy "camina" sobre la puerta</td><td>Cámara fija, la Dome se desplaza 6 ft en pluma</td></tr>
+          <tr><td class="num">11–15</td><td>Puertas suicide abriéndose en sentido opuesto</td><td>Gimbal entrando, Lantern al 5 %, LED del camión dominando</td></tr>
+          <tr><td class="num">15–19</td><td>Dash flecha, cinco relojes azules, iPad en la cubierta</td><td>35 mm, 3200 K</td></tr>
+          <tr><td class="num">19–24</td><td>Cama: tanques, compresores, manifold bajo la tapa</td><td>Pluma o gimbal cenital, air ride subiendo con sonido limpio</td></tr>
+          <tr><td class="num">24–31</td><td>Plano general girando</td><td>Cámara fija a 3 ft, 20 mm, tornamesa (o gimbal en órbita)</td></tr>
+          <tr><td class="num">31–34</td><td>Frente COE + "Built twice"</td><td>Cámara fija, corte a negro</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted" style="margin-top:10px">Entregar siempre el corte principal, la versión sin música y el master con subtítulos, como pide el capítulo 13. Música: referencia Run-D.M.C. solo desde la biblioteca de Instagram; para ads y YouTube hace falta licencia.</p>
+    </div>
+    <div class="grid2" style="gap:12px">
+      <figure><img src="img/godzilla_exterior.jpg" style="width:100%;border-radius:6px" alt="Render lateral del COE candy naranja con rines negros"><figcaption>El exterior aprobado. Bajo el cenital el candy pasa de cobre a marrón en la curva.</figcaption></figure>
+      <figure><img src="img/godzilla_interior.jpg" style="width:100%;border-radius:6px" alt="Render del interior café y caramelo con puertas suicide abiertas y LED cálido"><figcaption>El interior bicolor con LED cálido: la Lantern solo levanta costuras; el LED del camión manda.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. PASO A PASO ================= -->
+<section>
+  <div class="eyebrow">08 · Paso a paso</div>
+  <h2>Ruta para tener el estudio antes de la semana 8 del Libro Maestro</h2>
+  <ol class="steps">
+    <li><b>Medir y decidir el espacio (esta semana)</b><span>Altura libre real, tablero eléctrico, puertas, tragaluces. Decidir A, B o C con el dueño. Si es 20 × 20, aceptar por escrito que el plano general se hace fuera de la bahía.</span></li>
+    <li><b>Piso y ciclorama (semanas 1–4)</b><span>Primero el cove en drywall, después el epoxi para que quede corrido bajo la curva. El epoxi necesita 5–7 días de curado antes de meter un camión de 3 toneladas.</span></li>
+    <li><b>Electricidad y colgado (semana 3)</b><span>Circuitos dedicados, tomas en techo, cuatro puntos de anclaje con polea para el marco cenital. Tapar toda luz de día.</span></li>
+    <li><b>Compra de luz y grip (semana 4)</b><span>Aprovechar la liquidación del LS 600c Pro II mientras dure. Marcos, grid cloth, floppies, C-stands. Lo demás puede esperar.</span></li>
+    <li><b>Cámara y prueba con otro vehículo (semana 5)</b><span>Rodar un reel completo con cualquier carro del taller siguiendo el guion de 34 s. Afinar altura del cenital, posición de la Dome y polarizador. Publicarlo: es contenido igual.</span></li>
+    <li><b>Sesión Godzilla · Día 1 showroom (semana 8)</b><span>Fondo, 360°, ruedas, motor, cama, puertas, dash, air ride subiendo y bajando con audio limpio. Día 2 calle con los rolling shots.</span></li>
+  </ol>
+</section>
+
+<div class="foot">
+  <p>Fuentes de precios: aputure.com, amarancreators.com, nanliteus.com, msegrip.com, kupogrip.com, store.dji.com, edelkrone.com, smallhd.com, fjwestcott.com, canvasgrip.com, us.ecoflow.com y fichas de B&amp;H, Adorama y Sweetwater con fecha 2026. Costos de piso y cyc: Tampa Epoxy Floors 2026, Circular Studios, AST Cyc, Archways &amp; Ceilings. Dimensiones de referencia: Photo-Motion (estudio para trucks 33 × 26 × 15 ft), Studio C2 (tornamesa 20 ft, techo 24 ft). Análisis del reel: instagram.com/reel/DXueW7-DQWY. Este documento acompaña al Libro Maestro Godzilla v1.0 del 22 de agosto de 2026.</p>
+</div>
+
+</div>
+
+</body>
+</html>
