@@ -3,98 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Estudio Godzilla</title>
+<title>Propuesta Estudio JP</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#F3F0EA; --bg2:#FFFFFF; --ink:#1C1814; --ink2:#5C554D; --line:#DDD6CC;
-  --copper:#B2531B; --gold:#D9A441; --alu:#9A948C; --duv:#1A1714; --rec:#FBF3EA;
+  color-scheme:light;
+  --bg:#FFFFFF; --bg2:#F6F5F2; --ink:#161412; --ink2:#5F5A54; --line:#E3E0DA;
+  --copper:#B2531B; --gold:#C9962E; --duv:#1A1714; --soft:#FBF4EC;
   --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
   --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#15120F; --bg2:#1F1B17; --ink:#EFE8DE; --ink2:#B4AB9F; --line:#3A332C;
-    --copper:#E0763A; --gold:#E2B75B; --alu:#8A847B; --duv:#0B0908; --rec:#2A211A;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#15120F; --bg2:#1F1B17; --ink:#EFE8DE; --ink2:#B4AB9F; --line:#3A332C;
-  --copper:#E0763A; --gold:#E2B75B; --alu:#8A847B; --duv:#0B0908; --rec:#2A211A;
-}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding-block:0 80px;padding-inline:20px}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-block:0 90px;padding-inline:22px}
 a{color:var(--copper)}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.02;margin:0}
-h1{font-size:clamp(46px,8vw,96px);font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
-h2{font-size:clamp(30px,4.2vw,46px);font-weight:600;text-transform:uppercase}
-h3{font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
-p{margin:0 0 14px;max-width:68ch}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
-section{padding-block:52px 0;border-top:1px solid var(--line);margin-top:52px}
-section:first-of-type{border-top:0;margin-top:0}
-.lead{font-size:20px;max-width:60ch}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.02;margin:0;color:var(--ink)}
+h1{font-size:clamp(44px,7.5vw,88px);font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+h2{font-size:clamp(30px,4vw,44px);font-weight:600;text-transform:uppercase}
+h3{font-size:21px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0 0 14px;max-width:70ch}
+.lead{font-size:19.5px;max-width:62ch}
 .muted{color:var(--ink2)}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end;padding-block:36px 0}
-.hero img{width:100%;max-width:100%;display:block;border-radius:6px}
-.hero .side{display:flex;flex-direction:column;gap:14px}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
-.kpi{border:1px solid var(--line);background:var(--bg2);padding:12px 14px;border-radius:6px}
-.kpi b{display:block;font-family:var(--display);font-size:30px;line-height:1;color:var(--copper)}
-.kpi span{font-size:12.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.num{font-family:var(--display);font-size:15px;letter-spacing:.14em;color:var(--copper);text-transform:uppercase;margin-bottom:8px}
+.sec{padding-block:60px 0;margin-top:60px;border-top:2px solid var(--ink)}
+.sec:first-of-type{border-top:0;margin-top:0;padding-top:44px}
+.block{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--line);border-radius:3px;color:var(--ink2);margin-bottom:14px;background:var(--bg2)}
+.block.vis{border-color:var(--gold);color:#8A6412;background:#FFF8E8}
+.block.tools{border-color:#3B6E8F;color:#2C5670;background:#EEF5FA}
+.block.money{border-color:#2E7D4F;color:#236240;background:#EDF7F0}
+.cover{display:grid;grid-template-columns:1fr;gap:26px}
+.cover img{width:100%;max-width:100%;display:block;border-radius:6px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+.meta div{border-top:2px solid var(--ink);padding-top:10px}
+.meta b{display:block;font-family:var(--display);font-size:24px;line-height:1.05}
+.meta span{font-size:12.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
 figure{margin:0}
 figcaption{font-size:13px;color:var(--ink2);margin-top:8px;font-family:var(--mono)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .strip{display:block;width:100%;max-width:100%;border-radius:6px}
 .ing{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
-.ing div{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:12px 14px;font-size:14.5px;color:var(--ink2)}
+.ing div{background:var(--bg2);border-radius:6px;padding:14px 15px;font-size:14.5px;color:var(--ink2)}
 .ing b{display:block;color:var(--ink);font-family:var(--display);font-size:20px;text-transform:uppercase;margin-bottom:4px}
-.sw{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.sw{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
 .sw span{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2)}
-.sw i{display:inline-block;width:22px;height:22px;border-radius:4px;border:1px solid rgba(0,0,0,.25)}
-.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--bg2)}
+.sw i{display:inline-block;width:22px;height:22px;border-radius:4px;border:1px solid rgba(0,0,0,.2)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
 table{border-collapse:collapse;width:100%;font-size:15px}
 th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:500;background:var(--bg)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:500;background:var(--bg2)}
 tr:last-child td{border-bottom:0}
-td.k{font-family:var(--display);font-size:18px;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;color:var(--ink)}
-td.rec,th.rec{background:var(--rec)}
-th.rec{color:var(--copper)}
-tr.total td{font-weight:600;background:var(--bg);font-size:17px}
-tr.total td.rec{background:var(--rec)}
+td.k{font-family:var(--display);font-size:18px;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+tr.total td{font-weight:600;background:var(--bg2);font-size:17px}
+tr.grand td{font-weight:700;background:var(--ink);color:#fff;font-size:19px}
 .price{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 .r{text-align:right}
-.plan{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:10px;overflow-x:auto}
+.plan{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px;overflow-x:auto}
 .plan svg{display:block;width:100%;height:auto;max-width:100%;font-family:var(--mono)}
-.legend{display:grid;grid-template-columns:1fr;gap:8px;margin-top:6px;font-size:15px}
+.legend{display:grid;grid-template-columns:1fr;gap:9px;margin-top:6px;font-size:15px}
 .legend div{display:flex;gap:10px;align-items:flex-start}
 .legend i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--copper);color:#fff;font:600 13px/24px var(--display);text-align:center;font-style:normal}
 .legend small{display:block;color:var(--ink2);font-size:13.5px}
-.callout{border-left:4px solid var(--copper);background:var(--bg2);padding:14px 18px;border-radius:0 6px 6px 0;margin:18px 0}
+.callout{border-left:4px solid var(--copper);background:var(--soft);padding:14px 18px;border-radius:0 6px 6px 0;margin:18px 0}
 .callout p:last-child{margin-bottom:0}
-ul.tight{margin:0 0 12px;padding-left:20px;max-width:68ch}
+ul.tight{margin:0 0 12px;padding-left:20px;max-width:70ch}
 ul.tight li{margin-bottom:6px}
 .angles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .angles img,.wide img{width:100%;max-width:100%;display:block;border-radius:6px}
 .wide{margin-top:14px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:16px 18px 12px}
-.card h3{margin-bottom:6px;font-size:20px}
-.card p{font-size:15px;margin-bottom:6px}
-details{border:1px solid var(--line);border-radius:6px;background:var(--bg2);margin-top:14px}
-summary{cursor:pointer;padding:14px 18px;font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.02em}
-details .in{padding:0 18px 18px}
-.foot{font-size:13px;color:var(--ink2);margin-top:40px;border-top:1px solid var(--line);padding-top:16px}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tool{border:1px solid var(--line);border-radius:6px;padding:16px 18px 10px;background:#fff}
+.tool h3{font-size:20px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.tool dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14.5px}
+.tool dt{font-weight:600;white-space:nowrap}
+.tool dd{margin:0;color:var(--ink2)}
+.foot{font-size:13px;color:var(--ink2);margin-top:44px;border-top:1px solid var(--line);padding-top:16px}
 @media (max-width:820px){
-  .hero,.grid2{grid-template-columns:1fr}
+  .grid2,.tools{grid-template-columns:1fr}
   .ing{grid-template-columns:repeat(2,1fr)}
-  .grid3,.angles{grid-template-columns:1fr}
+  .angles{grid-template-columns:1fr}
+  .meta{grid-template-columns:1fr 1fr}
 }
 @media (max-width:520px){
-  .ing,.kpis{grid-template-columns:1fr}
-  .kpi b{font-size:26px}
+  .ing,.meta{grid-template-columns:1fr}
+  .tool dl{grid-template-columns:1fr}
+  .tool dt{white-space:normal}
 }
 img{max-width:100%}</style>
 </head>
@@ -102,94 +95,82 @@ img{max-width:100%}</style>
 
 <div class="wrap">
 
-<!-- HERO -->
-<section class="hero">
-  <figure>
-    <img src="img/render_bts.jpg" alt="Simulación del estudio en la bodega de 34 por 26 pies: vehículo candy cobre frente al rincón blanco, techo de luz, luz de pintura, ventana lateral">
-    <figcaption>Simulación de luz calculada por computadora con las medidas reales de la bodega: 34 × 26 ft, 11 ft de alto. Vehículo de medidas estándar (16 ft) para ilustrar el espacio.</figcaption>
-  </figure>
-  <div class="side">
-    <div class="eyebrow">JP Motor Trend · Estudio de video en bodega</div>
-    <h1>Estudio Godzilla</h1>
-    <p class="lead">Convertir la bodega en un estudio de video para que cada vehículo que salga del taller se vea como en los reels de RK Motors: fondo blanco sin esquinas, piso espejo y una pintura que brilla.</p>
-    <div class="kpis">
-      <div class="kpi"><b>34×26 ft</b><span>tu bodega · 11 ft alto</span></div>
-      <div class="kpi"><b>3</b><span>opciones de equipo</span></div>
-      <div class="kpi"><b>$33,900</b><span>opción recomendada</span></div>
+<!-- 01 PORTADA -->
+<section class="sec cover">
+  <div>
+    <div class="num">01 · Propuesta</div>
+    <h1>Estudio de video<br>en tu bodega</h1>
+    <p class="lead" style="margin-top:14px">Una sola propuesta para convertir la bodega de JP Motor Trend en un estudio donde cada vehículo se grabe como en los reels de RK Motors: fondo blanco sin esquinas, piso espejo y una pintura que brilla. Incluye el equipo completo y su montaje.</p>
+    <div class="meta">
+      <div><b>JP Motor Trend</b><span>cliente</span></div>
+      <div><b>34 × 26 ft · 11 ft</b><span>bodega · altura</span></div>
+      <div><b>$33,923</b><span>equipo, USD</span></div>
+      <div><b>22 sep 2026</b><span>fecha · versión 1</span></div>
     </div>
-    <p class="muted" style="font-size:13.5px;margin-top:4px">Versión 5 · 22 sep 2026 · La propuesta cubre equipo y montaje del equipo. Precios en USD verificados el 18 sep 2026 en fabricante, B&amp;H y Adorama.</p>
   </div>
+  <figure>
+    <img src="img/render_bts.jpg" alt="Simulación del estudio: vehículo frente al rincón blanco bajo el softbox de techo, con luz de pintura y ventana lateral">
+    <figcaption>Simulación de luz calculada con las medidas reales de la bodega. Vehículo de medidas estándar (16 ft) para ilustrar el espacio.</figcaption>
+  </figure>
 </section>
 
-<!-- 01 -->
-<section>
-  <div class="eyebrow">01 · La meta</div>
-  <h2>Así se ve el resultado que buscamos</h2>
-  <p class="lead">Este es el reel de referencia de RK Motors: 34 segundos, vertical, 136 mil likes. Son 9 tomas cortas de un camión sobre fondo blanco. Parece simple, pero lo hacen cinco cosas.</p>
+<!-- 02 RESULTADO -->
+<section class="sec">
+  <div class="num">02 · El resultado</div>
+  <span class="block vis">Visual</span>
+  <h2>Así se verán tus vehículos</h2>
+  <p class="lead">Este es el reel de referencia de RK Motors: 34 segundos, vertical, 136 mil likes. Son 9 tomas cortas de un camión sobre fondo blanco. Lo hacen cinco cosas, y las cinco están en esta propuesta.</p>
   <img class="strip" src="img/rk_strip.jpg" alt="Siete cuadros del reel de RK Motors: rueda, motor, emblema, interior, cama, plano general y frente">
   <div class="ing">
-    <div><b>1 · Luz desde arriba</b>Una sola fuente de luz enorme sobre el vehículo. Es lo que hace que la pintura se vea líquida.</div>
+    <div><b>1 · Luz desde arriba</b>Un softbox enorme sobre el vehículo. Es lo que hace que la pintura se vea líquida.</div>
     <div><b>2 · Fondo sin esquinas</b>Pared y piso blancos unidos por una curva. El ojo no encuentra dónde termina el cuarto.</div>
     <div><b>3 · Piso espejo</b>Epoxi gris pulido que refleja el vehículo. Gris, no blanco, para que no "queme" en video.
       <div class="sw"><span><i style="background:#A9AAAE"></i>Gris plata</span><span><i style="background:#7C7E82"></i>Gris medio ★</span><span><i style="background:#4B4D51"></i>Grafito</span></div></div>
     <div><b>4 · Cámara que se mueve despacio</b>Riel o estabilizador. Ninguna toma dura más de 5 segundos y ninguna está quieta.</div>
     <div><b>5 · Control de reflejos</b>Filtro polarizador en el lente y telas negras que "pintan" el brillo donde queremos.</div>
   </div>
-  <p class="muted" style="font-size:14px;margin-top:12px">★ Color de piso recomendado: gris medio (tipo Sherwin-Williams "Dovetail" o el "Medium Gray" de cualquier epoxi 100 % sólidos). El plata refleja más pero se quema con vehículos blancos; el grafito da más drama pero oscurece los bajos.</p>
+  <p class="muted" style="font-size:14px;margin-top:12px">★ Piso recomendado: epoxi 100 % sólidos gris medio, alto brillo. El plata refleja más pero se quema con vehículos blancos; el grafito da más drama pero oscurece los bajos.</p>
 </section>
 
-<!-- 02 -->
-<section>
-  <div class="eyebrow">02 · Tu bodega</div>
-  <h2>34 × 26 ft y 11 ft de alto: así se acomoda</h2>
-  <p class="lead">El vehículo va en diagonal frente a un rincón blanco. La cámara queda en la esquina opuesta, con 20 ft libres para verlo completo. El softbox del video es un <b>Chimera F2X</b>, un softbox de techo que se vende terminado: falda negra, cara blanca y se cuelga de las cuatro esquinas. Va pegado al techo.</p>
-
+<!-- 03 PLANO -->
+<section class="sec">
+  <div class="num">03 · Tu bodega</div>
+  <span class="block vis">Visual</span>
+  <h2>Cómo se acomoda en 34 × 26 ft</h2>
+  <p class="lead">El vehículo va en diagonal frente a un rincón de cortinas blancas. La cámara queda en la esquina opuesta con 20 ft libres para verlo completo. El softbox va pegado al techo.</p>
   <div class="grid2">
     <div class="plan">
-      <svg viewBox="0 0 560 420" role="img" aria-label="Planta de la bodega de 34 por 26 pies con un vehículo estándar en diagonal frente al rincón blanco, la cámara en la esquina opuesta y las luces marcadas con letras">
-        <defs>
-          <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink2)"/></marker>
-        </defs>
+      <svg viewBox="0 0 560 420" role="img" aria-label="Planta de la bodega con el vehículo en diagonal frente al rincón blanco, la cámara en la esquina opuesta y las luces marcadas con letras">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5F5A54"/></marker></defs>
         <g transform="translate(40,34)">
-          <!-- room 34 x 26 ft at 14 px/ft -->
-          <rect x="0" y="0" width="476" height="364" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/>
-          <!-- white curtains: back + right, curved corner -->
-          <path d="M0,0 L434,0 Q476,0 476,42 L476,364" fill="none" stroke="var(--copper)" stroke-width="8"/>
-          <text x="238" y="-12" font-size="12.5" text-anchor="middle" fill="var(--copper)" font-weight="600">CORTINA BLANCA · 34 ft</text>
-          <text x="496" y="182" font-size="12.5" text-anchor="middle" fill="var(--copper)" font-weight="600" transform="rotate(90 496 182)">CORTINA BLANCA · 26 ft</text>
-          <!-- black walls -->
-          <line x1="0" y1="2" x2="0" y2="364" stroke="var(--duv)" stroke-width="6"/>
-          <line x1="0" y1="364" x2="476" y2="364" stroke="var(--duv)" stroke-width="6"/>
-          <text x="238" y="384" font-size="11" text-anchor="middle" fill="var(--ink2)">tela negra</text>
-          <!-- light ceiling rectangle 20 x 14, rotated with the car -->
+          <rect x="0" y="0" width="476" height="364" fill="#F6F5F2" stroke="#161412" stroke-width="2"/>
+          <path d="M0,0 L434,0 Q476,0 476,42 L476,364" fill="none" stroke="#B2531B" stroke-width="8"/>
+          <text x="238" y="-12" font-size="12.5" text-anchor="middle" fill="#B2531B" font-weight="600">CORTINA BLANCA · 34 ft</text>
+          <text x="496" y="182" font-size="12.5" text-anchor="middle" fill="#B2531B" font-weight="600" transform="rotate(90 496 182)">CORTINA BLANCA · 26 ft</text>
+          <line x1="0" y1="2" x2="0" y2="364" stroke="#1A1714" stroke-width="6"/>
+          <line x1="0" y1="364" x2="476" y2="364" stroke="#1A1714" stroke-width="6"/>
+          <text x="238" y="384" font-size="11" text-anchor="middle" fill="#5F5A54">tela negra</text>
           <g transform="translate(308,140) rotate(-45)">
-            <rect x="-140" y="-70" width="280" height="140" fill="var(--gold)" fill-opacity=".14" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="7 4"/>
-            <text x="0" y="-80" font-size="11" text-anchor="middle" fill="var(--gold)" font-weight="600">SOFTBOX CHIMERA F2X 10 × 20 ft · A · pegado al techo</text>
+            <rect x="-140" y="-70" width="280" height="140" fill="#C9962E" fill-opacity=".16" stroke="#C9962E" stroke-width="1.5" stroke-dasharray="7 4"/>
+            <text x="0" y="-80" font-size="11" text-anchor="middle" fill="#8A6412" font-weight="600">SOFTBOX 10 × 20 ft · A · pegado al techo</text>
           </g>
-          <!-- standard vehicle 16.4 x 6.4 ft -->
           <g transform="translate(308,140) rotate(-45)">
-            <rect x="-115" y="-45" width="230" height="90" rx="10" fill="var(--copper)" opacity=".92"/>
+            <rect x="-115" y="-45" width="230" height="90" rx="10" fill="#B2531B" opacity=".92"/>
             <rect x="-30" y="-38" width="70" height="76" rx="8" fill="none" stroke="#fff" opacity=".7"/>
             <text x="0" y="5" font-size="12" text-anchor="middle" fill="#fff" font-weight="600">VEHÍCULO · 16 ft</text>
-            <text x="-100" y="-52" font-size="9.5" text-anchor="middle" fill="var(--ink)">frente</text>
+            <text x="-100" y="-52" font-size="9.5" text-anchor="middle" fill="#161412">frente</text>
           </g>
-          <!-- A light box marker -->
-          <g transform="translate(200,258)"><circle r="13" fill="var(--copper)"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">A</text></g>
-          <!-- B dome -->
-          <g transform="translate(150,52)"><circle r="20" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/><circle r="12" fill="var(--copper)"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">B</text></g>
-          <!-- C black flag -->
-          <g transform="translate(255,26)"><rect x="-28" y="-4" width="56" height="8" fill="var(--duv)"/><circle cx="-40" cy="0" r="12" fill="var(--copper)"/><text x="-40" y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">C</text></g>
-          <!-- D window 8x8 -->
-          <g transform="translate(392,296) rotate(-45)"><rect x="-56" y="-6" width="112" height="12" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/></g>
-          <g transform="translate(360,326)"><circle r="12" fill="var(--copper)"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">D</text></g>
-          <!-- E tube -->
-          <g transform="translate(430,40) rotate(-45)"><rect x="-22" y="-3" width="44" height="6" rx="3" fill="var(--gold)"/></g>
-          <g transform="translate(402,28)"><circle r="12" fill="var(--copper)"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">E</text></g>
-          <!-- camera -->
+          <g transform="translate(200,258)"><circle r="13" fill="#B2531B"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">A</text></g>
+          <g transform="translate(150,52)"><circle r="20" fill="#fff" stroke="#161412" stroke-width="2"/><circle r="12" fill="#B2531B"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">B</text></g>
+          <g transform="translate(255,26)"><rect x="-28" y="-4" width="56" height="8" fill="#1A1714"/><circle cx="-40" cy="0" r="12" fill="#B2531B"/><text x="-40" y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">C</text></g>
+          <g transform="translate(392,296) rotate(-45)"><rect x="-56" y="-6" width="112" height="12" fill="#fff" stroke="#161412" stroke-width="2"/></g>
+          <g transform="translate(360,326)"><circle r="12" fill="#B2531B"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">D</text></g>
+          <g transform="translate(430,40) rotate(-45)"><rect x="-22" y="-3" width="44" height="6" rx="3" fill="#C9962E"/></g>
+          <g transform="translate(402,28)"><circle r="12" fill="#B2531B"/><text y="4.5" font-size="13" text-anchor="middle" fill="#fff" font-weight="700">E</text></g>
           <g transform="translate(40,322)">
-            <rect x="-11" y="-8" width="22" height="15" fill="var(--ink)"/>
-            <line x1="12" y1="-2" x2="215" y2="-160" stroke="var(--ink2)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr3)"/>
-            <text x="-6" y="28" font-size="11" fill="var(--ink)" font-weight="600">CÁMARA · 20 ft</text>
+            <rect x="-11" y="-8" width="22" height="15" fill="#161412"/>
+            <line x1="12" y1="-2" x2="215" y2="-160" stroke="#5F5A54" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+            <text x="-6" y="28" font-size="11" fill="#161412" font-weight="600">CÁMARA · 20 ft</text>
           </g>
         </g>
       </svg>
@@ -197,133 +178,144 @@ img{max-width:100%}</style>
     <div>
       <h3 style="margin-bottom:10px">Qué es cada letra</h3>
       <div class="legend">
-        <div><i>A</i><div><b>Softbox de techo Chimera F2X.</b> 10 × 20 ft (3 × 6 m), 3 ft de fondo, colgado con cadena de las cuatro esquinas pegado al techo. Adentro van 4 lámparas LED. <small>Es la misma caja que se ve arriba del camión en el video de RK.</small></div></div>
+        <div><i>A</i><div><b>Softbox de techo.</b> Chimera F2X de 10 × 20 ft (3 × 6 m), 3 ft de fondo, colgado de las cuatro esquinas pegado al techo. Adentro van 4 lámparas LED. <small>Es la misma caja que se ve arriba del camión en el video de RK.</small></div></div>
         <div><i>B</i><div><b>Luz de pintura.</b> Lámpara con domo suave de 5 ft en un brazo con ruedas. <small>Se mueve durante la toma para que el brillo recorra las curvas.</small></div></div>
         <div><i>C</i><div><b>Tela negra.</b> Bandera de 4 × 4 ft. <small>Pone la sombra oscura en la pintura donde queremos.</small></div></div>
         <div><i>D</i><div><b>Ventana de luz.</b> Marco de 8 × 8 ft con tela blanca. <small>Dibuja la franja larga sobre las puertas.</small></div></div>
         <div><i>E</i><div><b>Tubo cálido.</b> Detrás del vehículo. <small>Separa el color del fondo blanco.</small></div></div>
       </div>
-      <div class="callout"><p><b>Ojo con la altura.</b> El F2X mide 3 ft de fondo. Pegado al techo de 11 ft, la cara blanca queda a 8 ft del piso. Un vehículo estándar mide 5 a 6.5 ft: quedan 1.5 a 3 ft de aire, suficiente. Para camiones altos de más de 7 ft queda muy justo: en ese caso conviene el modelo 5 × 10 ft, que es más ligero, o aceptar que la caja toque casi el techo de la cabina. Lista de compra en la sección 05.</p></div>
-      <p class="muted" style="font-size:14px"><b>Cortinas blancas laterales:</b> van del piso al techo (11 ft) y se recogen 1 ft en el piso para formar la curva. No necesitan más altura: la luz viene del techo, no de arriba de ellas.</p>
+      <div class="callout"><p><b>Altura.</b> El softbox mide 3 ft de fondo. Pegado al techo de 11 ft, la cara blanca queda a 8 ft del piso. Un vehículo estándar mide 5 a 6.5 ft: quedan 1.5 a 3 ft de aire, suficiente. Para camiones de más de 7 ft queda justo.</p></div>
+      <p class="muted" style="font-size:14px"><b>Lo que pone el cliente:</b> cortinas blancas del piso al techo en las dos paredes del rincón, piso epoxi gris medio, techo pintado de negro mate y 3 circuitos eléctricos de 20 A. No está incluido en esta oferta.</p>
     </div>
   </div>
 </section>
 
-<!-- 03 -->
-<section>
-  <div class="eyebrow">03 · Comparación</div>
-  <h2>Tres opciones de equipo, una recomendada</h2>
-  <p class="lead">Las tres usan el mismo plano. Cambia cuánta luz hay y con qué cámara se graba. Todo el equipo de la Básica se reutiliza si después se sube a la Recomendada.</p>
-  <div class="tbl"><table>
-    <thead><tr><th style="width:15%"></th><th style="width:26%">Opción 1 · Básica</th><th class="rec" style="width:31%">Opción 2 · Recomendada</th><th style="width:28%">Opción 3 · Pro</th></tr></thead>
-    <tbody>
-      <tr><td class="k">Softbox de techo</td><td>Chimera F2X 5 × 10 ft con 2 lámparas. Cubre el vehículo, no el piso alrededor.</td><td class="rec">Chimera F2X 10 × 20 ft con 4 lámparas: cubre el vehículo y el piso, como en el video.</td><td>Chimera F2X 10 × 20 ft con las 8 lámparas: máxima potencia para 4K y fotos.</td></tr>
-      <tr><td class="k">Luz de pintura</td><td>Lámpara + domo suave 5 ft en brazo.</td><td class="rec">Lámpara + domo suave 5 ft en brazo.</td><td>Lámpara profesional grande + domo.</td></tr>
-      <tr><td class="k">Otras luces</td><td>Ninguna.</td><td class="rec">Ventana 8 × 8 + luces de interior + 4 tubos.</td><td>Igual que la 2 + luces para el fondo + minis para rines y motor.</td></tr>
-      <tr><td class="k">Cámara</td><td>Sony a7 IV + lente 24-70 + macro.</td><td class="rec">Sony FX3 (cámara de cine) + 24-70 + macro.</td><td>FX3 + lentes Sony GM + gran angular.</td></tr>
-      <tr><td class="k">Movimiento</td><td>Estabilizador + riel manual + trípode.</td><td class="rec">Estabilizador con foco automático + riel motorizado + trípode fluido.</td><td>Igual que la 2 + monitor profesional.</td></tr>
-      <tr><td class="k">Qué se ve</td><td>Los detalles quedan perfectos: rueda, motor, interior, pintura. El plano general sale plano, sin la franja de luz larga en las puertas.</td><td class="rec"><b>El look RK Motors completo</b> en el reel vertical, incluido el plano general.</td><td>Igual que la 2, más calidad para YouTube en 4K, fotos de venta y poder cambiar el color del fondo.</td></tr>
-      <tr><td class="k">Montaje</td><td>Instalación, calibración de luces, prueba de grabación y capacitación al equipo.</td><td class="rec">Instalación, calibración de luces, prueba de grabación y capacitación al equipo.</td><td>Instalación, calibración de luces, prueba de grabación y capacitación al equipo.</td></tr>
-      <tr class="total"><td class="k">Equipo</td><td class="price">$16,000</td><td class="rec price">$33,900</td><td class="price">$47,100</td></tr>
-    </tbody>
-  </table></div>
-  <div class="grid3" style="margin-top:16px">
-    <div class="card"><h3>Por qué la 2</h3><p>Es la primera opción con el softbox de 10 × 20 ft: el plano general, la toma que más se comparte, se ve como RK. Y la cámara de cine graba vertical sin límite de tiempo ni recalentamiento.</p></div>
-    <div class="card"><h3>Cuándo la 1</h3><p>Para arrancar ya o probar el concepto. Las lámparas se reutilizan en la 2; el softbox 5 × 10 queda como luz lateral.</p></div>
-    <div class="card"><h3>Cuándo la 3</h3><p>Si además del reel se quiere producir video en 4K para YouTube y fotos de venta con el mismo equipo.</p></div>
-  </div>
-</section>
-
-<!-- 04 -->
-<section>
-  <div class="eyebrow">04 · Simulación</div>
+<!-- 04 RENDER -->
+<section class="sec">
+  <div class="num">04 · Render</div>
+  <span class="block vis">Visual</span>
   <h2>Cómo se vería desde tres ángulos</h2>
-  <p class="lead">Cálculo físico de la luz con el plano de arriba y las medidas exactas de la bodega, usando un vehículo de medidas estándar. Piso epoxi gris medio.</p>
+  <p class="lead">Cálculo físico de la luz con el plano anterior y las medidas exactas de la bodega, usando un vehículo de medidas estándar y piso epoxi gris medio.</p>
   <div class="angles">
-    <figure><img src="img/render_front.jpg" alt="Render: tres cuartos frontal del vehículo frente al rincón blanco"><figcaption>Tres cuartos frontal.</figcaption></figure>
-    <figure><img src="img/render_side.jpg" alt="Render: perfil completo del vehículo con la cortina blanca de fondo"><figcaption>Perfil completo.</figcaption></figure>
+    <figure><img src="img/render_front.jpg" alt="Render: tres cuartos frontal del vehículo bajo el softbox"><figcaption>Tres cuartos frontal.</figcaption></figure>
+    <figure><img src="img/render_side.jpg" alt="Render: perfil completo del vehículo"><figcaption>Perfil completo.</figcaption></figure>
     <figure><img src="img/render_rear.jpg" alt="Render: tres cuartos trasero del vehículo"><figcaption>Tres cuartos trasero.</figcaption></figure>
   </div>
-  <figure class="wide"><img src="img/render_top.jpg" alt="Vista desde arriba de la bodega con el vehículo en diagonal, el rincón blanco y las luces"><figcaption>Vista desde arriba: rincón blanco arriba y a la derecha, vehículo en diagonal, cámara abajo a la izquierda.</figcaption></figure>
+  <figure class="wide"><img src="img/render_top.jpg" alt="Vista desde arriba de la bodega con el vehículo, el softbox y las luces"><figcaption>Vista desde arriba: rincón blanco arriba y a la derecha, softbox sobre el vehículo, cámara abajo a la izquierda.</figcaption></figure>
 </section>
 
-<section>
-  <div class="eyebrow">05 · Softbox de techo</div>
-  <h2>El softbox del video: qué es y qué comprar</h2>
-  <p class="lead">Se llama Chimera F2X y es el único softbox de techo de ese tamaño que se vende terminado. Godox no fabrica ninguno mayor a 158 cm. El F2X trae la falda negra, la cara blanca de difusión y los puntos para colgar; las lámparas LED se compran aparte y van adentro.</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Modelo</th><th>Tamaño</th><th>Lámparas</th><th>Peso</th><th class="r">USD</th></tr></thead>
-    <tbody>
-      <tr><td><a href="https://thelafirm.com/products/chimera-f2x-5-x-10-light-bank" target="_blank" rel="noopener">Chimera F2X 5 × 10 ft</a></td><td>1.5 × 3 m, 3 ft de fondo</td><td>2 puntos</td><td>34 kg</td><td class="price r">4,918</td></tr>
-      <tr style="background:var(--rec)"><td><a href="https://kayelites.com/shop/p/8970" target="_blank" rel="noopener">Chimera F2X 10 × 20 ft</a> ★</td><td>3 × 6 m, 3 ft de fondo</td><td>hasta 8 puntos</td><td>67 kg</td><td class="price r">12,680 (lista 14,094)</td></tr>
-      <tr><td><a href="https://kayelites.com/shop/p/8980" target="_blank" rel="noopener">Chimera F2X 10 × 30 ft</a></td><td>3 × 9 m, 3 ft de fondo</td><td>hasta 12 puntos</td><td>102 kg</td><td class="price r">16,000 (lista 17,795)</td></tr>
-    </tbody></table></div>
-  <p class="muted" style="font-size:14px;margin-top:8px">Las lámparas van sin reflector, colgadas de los puntos de 5/8" que trae la caja. Cualquier LED con montura Bowens sirve: <a href="https://amarancreators.com/products/amaran-300c" target="_blank" rel="noopener">Amaran 300c</a> $455 (la que proponemos), <a href="https://gomolight.com/products/godox-m600d-740w-knowled" target="_blank" rel="noopener">Godox M600D</a> $1,499 o <a href="https://aputure.com/en-US/products/ls-600c-pro-ii" target="_blank" rel="noopener">Aputure LS 600c Pro II</a> $1,490 en oferta.</p>
-
-  <div class="grid3" style="margin-top:16px">
-    <div class="card"><h3>Básica · 5 × 10 ft</h3><p>F2X 5 × 10 $4,918 + 2 × Amaran 300c $910. Cubre el vehículo pero no el piso alrededor.</p><p><b>≈ $5,830</b></p></div>
-    <div class="card" style="border-color:var(--copper)"><h3>Recomendada · 10 × 20 ft</h3><p>F2X 10 × 20 $12,680 + 4 × Amaran 300c $1,820. Cubre el vehículo y el piso: es el reflejo largo del video.</p><p><b>≈ $14,500</b></p></div>
-    <div class="card"><h3>Pro · 10 × 20 con 8 lámparas</h3><p>La misma caja con los 8 puntos llenos: 8 × Amaran 300c $3,640. Más potencia para 4K y fotos.</p><p><b>≈ $16,320</b></p></div>
+<!-- 05 HERRAMIENTAS -->
+<section class="sec">
+  <div class="num">05 · Herramientas</div>
+  <span class="block tools">Equipo</span>
+  <h2>Qué equipo lleva y para qué sirve cada cosa</h2>
+  <p class="lead">Todo lo que se instala en la bodega, explicado sin precios. Los precios están en la sección 06.</p>
+  <div class="tools">
+    <div class="tool"><h3>A · Softbox de techo</h3><dl>
+      <dt>Chimera F2X 10 × 20 ft</dt><dd>El softbox del video. Falda negra, cara blanca, se cuelga con cadena de las cuatro esquinas.</dd>
+      <dt>4 × Amaran 300c</dt><dd>Las lámparas LED que van adentro. Color ajustable de cálido a frío desde el celular.</dd>
+    </dl></div>
+    <div class="tool"><h3>B · Luz de pintura</h3><dl>
+      <dt>Amaran 300c + Light Dome 150</dt><dd>Lámpara con domo suave de 5 ft. Es la luz que "camina" sobre la pintura.</dd>
+      <dt>Brazo Avenger con contrapeso</dt><dd>Para mover la luz durante la toma sin que el pie salga en cuadro.</dd>
+    </dl></div>
+    <div class="tool"><h3>C y D · Control de luz</h3><dl>
+      <dt>Ventana 8 × 8 (marco Kupo + tela)</dt><dd>Con una Amaran 300c detrás: la franja blanca larga sobre las puertas.</dd>
+      <dt>2 banderas negras 4 × 4</dt><dd>Quitan brillo donde estorba y ponen la sombra oscura en la pintura.</dd>
+      <dt>Tela negra 20 × 20</dt><dd>Se cuelga en la pared frontal para que no se refleje el taller.</dd>
+      <dt>4 C-stands + 2 combos</dt><dd>Los pies que sostienen todo lo anterior.</dd>
+    </dl></div>
+    <div class="tool"><h3>E · Interior y detalles</h3><dl>
+      <dt>Aputure Lantern 90</dt><dd>Luz suave para dentro de la cabina.</dd>
+      <dt>Amaran F21c (panel flexible)</dt><dd>Se pega al techo interior para levantar costuras y tablero.</dd>
+      <dt>Kit de 4 minis MC</dt><dd>Luces del tamaño de un celular para rines, motor y bajos.</dd>
+      <dt>4 tubos Nanlite PavoTube 30C</dt><dd>Tubos de 4 ft detrás del vehículo: separan el color del fondo.</dd>
+    </dl></div>
+    <div class="tool"><h3>Cámara</h3><dl>
+      <dt>Sony FX3</dt><dd>Cámara de cine. Graba vertical sin límite de tiempo ni recalentamiento.</dd>
+      <dt>Sigma 24-70 f/2.8 II</dt><dd>El lente de trabajo para el 80 % de las tomas.</dd>
+      <dt>Sony 90 mm Macro</dt><dd>Para emblemas, rines, costuras y la textura de la pintura.</dd>
+      <dt>Polarizador + ND variable</dt><dd>El polarizador controla los reflejos; el ND permite grabar con el lente abierto.</dd>
+    </dl></div>
+    <div class="tool"><h3>Movimiento, monitor y audio</h3><dl>
+      <dt>DJI RS 4 Pro + Focus Pro</dt><dd>Estabilizador con foco automático láser: la cámara flota alrededor del vehículo.</dd>
+      <dt>Edelkrone SliderPLUS</dt><dd>Riel motorizado de 3 ft: los movimientos lentos de rueda y flanco.</dd>
+      <dt>Trípode Sachtler fluido</dt><dd>Para los paneos suaves del plano general.</dd>
+      <dt>Atomos Shinobi II</dt><dd>Monitor de 5" para ver la toma en grande mientras se graba.</dd>
+      <dt>Zoom F3 + Sennheiser MKE 600 + Rode Wireless PRO</dt><dd>Grabadora, micrófono para el motor y micrófono inalámbrico para voz.</dd>
+    </dl></div>
   </div>
-  <div class="callout" style="margin-top:18px"><p><b>Cómo se cuelga.</b> Con cadena o cable de acero desde las cuatro esquinas a cuatro anclajes en el techo. Pegado al techo de 11 ft la cara queda a 8 ft. El resto del techo se pinta de negro mate para que solo se refleje la cara blanca. Precio de oferta de Kaye Lites verificado el 22 sep 2026; el 10 × 20 se pide por encargo, 3 a 6 semanas.</p></div>
 </section>
 
-<!-- ANEXO -->
-<section>
-  <div class="eyebrow">Anexo</div>
-  <h2>Detalle técnico del equipo</h2>
-  <p class="muted">Marca por marca. Precios USD sin impuestos. El F2X 10 × 20 está en oferta en Kaye Lites ($12,680, lista $14,094).</p>
-
-  <details><summary>Opción 1 · Básica · $16,000</summary><div class="in"><div class="tbl"><table>
-    <thead><tr><th>Ítem</th><th>Qué es</th><th class="r">USD</th></tr></thead>
+<!-- 06 OFERTA -->
+<section class="sec">
+  <div class="num">06 · Oferta económica</div>
+  <span class="block money">Inversión</span>
+  <h2>Una sola oferta: equipo y montaje</h2>
+  <p class="lead">Precios en USD sin impuestos, verificados el 22 de septiembre de 2026 en fabricante y distribuidores. El softbox está en oferta en Kaye Lites; los tubos y la lámpara principal en liquidación mientras dure el stock.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Bloque</th><th>Qué incluye</th><th class="r">USD</th></tr></thead>
     <tbody>
-      <tr><td>Softbox de techo</td><td>Chimera F2X 5 × 10 ft + 2 × Amaran 300c</td><td class="price r">5,828</td></tr>
-      <tr><td>Luz de pintura</td><td>Amaran 300c + Light Dome 150</td><td class="price r">724</td></tr>
-      <tr><td>Grip</td><td>2 banderas negras 4 × 4, tela negra 20 × 20, 4 C-stands, brazo</td><td class="price r">1,879</td></tr>
-      <tr><td>Cámara</td><td>Sony a7 IV + Sigma 24-70 II + Sony 90 macro + polarizador + ND</td><td class="price r">4,815</td></tr>
-      <tr><td>Movimiento</td><td>DJI RS 4 Pro + riel Zeapon + trípode Benro</td><td class="price r">1,738</td></tr>
-      <tr><td>Monitor y audio</td><td>Atomos Shinobi II + Zoom F3 + Sennheiser MKE 600</td><td class="price r">998</td></tr>
-      <tr class="total"><td>Total equipo</td><td></td><td class="price r">15,982</td></tr>
-    </tbody></table></div></div></details>
+      <tr><td class="k">A · Softbox</td><td>Chimera F2X 10 × 20 ft ($12,680) + 4 × Amaran 300c ($1,820)</td><td class="price r">14,500</td></tr>
+      <tr><td class="k">B · Pintura</td><td>Amaran 300c + Light Dome 150</td><td class="price r">724</td></tr>
+      <tr><td class="k">C · D · Control</td><td>Ventana 8 × 8 con Amaran 300c ($1,490) + banderas, tela negra, C-stands, combos y brazo ($3,029)</td><td class="price r">4,519</td></tr>
+      <tr><td class="k">E · Interior</td><td>Lantern 90 + Amaran F21c + kit MC de 4 ($1,237) + 4 tubos PavoTube 30C ($720)</td><td class="price r">1,957</td></tr>
+      <tr><td class="k">Cámara</td><td>Sony FX3A + Sigma 24-70 II + Sony 90 macro + polarizador + ND</td><td class="price r">7,214</td></tr>
+      <tr><td class="k">Movimiento</td><td>DJI RS 4 Pro Combo + Focus Pro + Edelkrone SliderPLUS + Sachtler</td><td class="price r">3,712</td></tr>
+      <tr><td class="k">Monitor y audio</td><td>Atomos Shinobi II + Zoom F3 + MKE 600 + Rode Wireless PRO</td><td class="price r">1,297</td></tr>
+      <tr class="total"><td class="k">Equipo</td><td></td><td class="price r">33,923</td></tr>
+      <tr><td class="k">Montaje</td><td>Instalación del softbox y las luces, calibración, prueba de grabación con un vehículo del taller y capacitación al equipo</td><td class="price r">por definir</td></tr>
+      <tr class="grand"><td class="k">Total</td><td>Equipo + montaje</td><td class="price r">33,923 + montaje</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p><b>No incluido (lo pone el cliente):</b> cortinas blancas, piso epoxi, pintura negra del techo, electricidad y anclajes al techo para colgar el softbox.</p></div>
+</section>
 
-  <details open><summary>Opción 2 · Recomendada · $33,900</summary><div class="in"><div class="tbl"><table>
-    <thead><tr><th>Ítem</th><th>Qué es</th><th class="r">USD</th></tr></thead>
+<!-- 07 DETALLE -->
+<section class="sec">
+  <div class="num">07 · Detalle técnico</div>
+  <span class="block tools">Anexo</span>
+  <h2>Lista completa con precio por ítem</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Ítem</th><th>Cant.</th><th class="r">Unitario</th><th class="r">Subtotal</th></tr></thead>
     <tbody>
-      <tr><td>Softbox de techo</td><td>Chimera F2X 10 × 20 ft (oferta) + 4 × Amaran 300c</td><td class="price r">14,500</td></tr>
-      <tr><td>Luz de pintura</td><td>Amaran 300c + Light Dome 150</td><td class="price r">724</td></tr>
-      <tr><td>Ventana 8 × 8</td><td>Amaran 300c + marco Kupo + tela de difusión</td><td class="price r">1,490</td></tr>
-      <tr><td>Interior y detalles</td><td>Lantern 90 + Amaran F21c + kit MC de 4 minis</td><td class="price r">1,237</td></tr>
-      <tr><td>Tubos</td><td>Nanlite PavoTube II 30C kit 4</td><td class="price r">720</td></tr>
-      <tr><td>Grip</td><td>Banderas Matthews × 2, tela negra 20 × 20, 4 C-stands, 2 combos, brazo</td><td class="price r">3,029</td></tr>
-      <tr><td>Cámara</td><td>Sony FX3A + Sigma 24-70 II + Sony 90 macro + polarizador + ND</td><td class="price r">7,214</td></tr>
-      <tr><td>Movimiento</td><td>DJI RS 4 Pro Combo + Focus Pro + Edelkrone SliderPLUS + Sachtler</td><td class="price r">3,712</td></tr>
-      <tr><td>Monitor y audio</td><td>Shinobi II + Zoom F3 + MKE 600 + Rode Wireless PRO</td><td class="price r">1,297</td></tr>
-      <tr class="total"><td>Total equipo</td><td></td><td class="price r">33,923</td></tr>
-    </tbody></table></div></div></details>
-
-  <details><summary>Opción 3 · Pro · $47,100</summary><div class="in"><div class="tbl"><table>
-    <thead><tr><th>Ítem</th><th>Qué es</th><th class="r">USD</th></tr></thead>
-    <tbody>
-      <tr><td>Softbox de techo</td><td>Chimera F2X 10 × 20 ft (oferta) + 8 × Amaran 300c</td><td class="price r">16,320</td></tr>
-      <tr><td>Luz de pintura</td><td>LS 600c Pro II + Light Dome 150</td><td class="price r">1,759</td></tr>
-      <tr><td>Ventana, interior, tubos, fondo</td><td>Amaran 300c, Lantern + F22c + MC Pro 8, PavoTube 30XR kit 4, Halo 200x × 2</td><td class="price r">5,649</td></tr>
-      <tr><td>Grip</td><td>Stands Matthews, banderas Matthews, marcos, tela negra</td><td class="price r">5,543</td></tr>
-      <tr><td>Cámara</td><td>FX3A + Sony 24-70 GM II + 16-35 GM II + 90 macro + filtros</td><td class="price r">10,943</td></tr>
-      <tr><td>Movimiento, monitor, audio</td><td>RS 4 Pro Combo + Focus Pro + SliderPLUS + Sachtler + SmallHD Ultra 5 + audio</td><td class="price r">6,909</td></tr>
-      <tr class="total"><td>Total equipo</td><td></td><td class="price r">47,123</td></tr>
-    </tbody></table></div></div></details>
-
-  <details><summary>Energía y ajustes de cámara</summary><div class="in">
-    <ul class="tight">
-      <li>Cada Amaran 300c consume 350 W (3 A): las 4 del softbox suman 1,400 W, un circuito de 20 A. Con 8 lámparas, dos circuitos. La luz de pintura y la ventana van en otro.</li>
-      <li>Nunca compartir circuito con el compresor del taller ni con el aire acondicionado.</li>
-      <li>Cámara: 4K a 60 cuadros para bajar a 30 en edición, obturador 1/120, ISO 800, f/4 a f/5.6, balance fijo 5600 K exterior y 3200 K interior, polarizador girado toma por toma.</li>
-    </ul>
-  </div></details>
+      <tr><td>Chimera F2X 10 × 20 ft (oferta Kaye Lites, lista $14,094)</td><td>1</td><td class="price r">12,680</td><td class="price r">12,680</td></tr>
+      <tr><td>Amaran 300c (softbox 4, pintura 1, ventana 1)</td><td>6</td><td class="price r">455</td><td class="price r">2,730</td></tr>
+      <tr><td>Aputure Light Dome 150</td><td>1</td><td class="price r">269</td><td class="price r">269</td></tr>
+      <tr><td>Kupo 8 × 8 Butterfly Frame Kit + grid cloth 8 × 8</td><td>1</td><td class="price r">1,035</td><td class="price r">1,035</td></tr>
+      <tr><td>Matthews floppy 4 × 4</td><td>2</td><td class="price r">291</td><td class="price r">582</td></tr>
+      <tr><td>Tela negra 20 × 20 (Canvas Grip)</td><td>1</td><td class="price r">495</td><td class="price r">495</td></tr>
+      <tr><td>Impact Turtle Base C-stand kit</td><td>4</td><td class="price r">170</td><td class="price r">680</td></tr>
+      <tr><td>Matthews Hollywood Combo triple riser</td><td>2</td><td class="price r">481</td><td class="price r">962</td></tr>
+      <tr><td>Avenger D650 Junior Boom</td><td>1</td><td class="price r">310</td><td class="price r">310</td></tr>
+      <tr><td>Aputure Lantern 90</td><td>1</td><td class="price r">139</td><td class="price r">139</td></tr>
+      <tr><td>Amaran F21c</td><td>1</td><td class="price r">599</td><td class="price r">599</td></tr>
+      <tr><td>Aputure MC 4-Light Travel Kit</td><td>1</td><td class="price r">499</td><td class="price r">499</td></tr>
+      <tr><td>Nanlite PavoTube II 30C 4-kit</td><td>1</td><td class="price r">720</td><td class="price r">720</td></tr>
+      <tr><td>Sony FX3A</td><td>1</td><td class="price r">4,298</td><td class="price r">4,298</td></tr>
+      <tr><td>Sigma 24-70 f/2.8 DG DN II Art</td><td>1</td><td class="price r">1,319</td><td class="price r">1,319</td></tr>
+      <tr><td>Sony FE 90 mm f/2.8 Macro G</td><td>1</td><td class="price r">1,098</td><td class="price r">1,098</td></tr>
+      <tr><td>PolarPro QuartzLine CPL 82 mm</td><td>1</td><td class="price r">249</td><td class="price r">249</td></tr>
+      <tr><td>PolarPro VND 2-5 stops 82 mm</td><td>1</td><td class="price r">250</td><td class="price r">250</td></tr>
+      <tr><td>DJI RS 4 Pro Combo</td><td>1</td><td class="price r">1,099</td><td class="price r">1,099</td></tr>
+      <tr><td>DJI Focus Pro Creator Combo</td><td>1</td><td class="price r">999</td><td class="price r">999</td></tr>
+      <tr><td>Edelkrone SliderPLUS v6</td><td>1</td><td class="price r">668</td><td class="price r">668</td></tr>
+      <tr><td>Sachtler 75/2 aluminio + Ace XL</td><td>1</td><td class="price r">946</td><td class="price r">946</td></tr>
+      <tr><td>Atomos Shinobi II</td><td>1</td><td class="price r">349</td><td class="price r">349</td></tr>
+      <tr><td>Zoom F3 + Sennheiser MKE 600</td><td>1</td><td class="price r">649</td><td class="price r">649</td></tr>
+      <tr><td>Rode Wireless PRO</td><td>1</td><td class="price r">299</td><td class="price r">299</td></tr>
+      <tr class="total"><td>Total equipo</td><td></td><td></td><td class="price r">33,923</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="tight" style="margin-top:14px">
+    <li>Consumo: las 4 Amaran del softbox suman 1,400 W (un circuito de 20 A). La luz de pintura y la ventana van en un segundo circuito; tubos, minis y cámara en un tercero.</li>
+    <li>El F2X 10 × 20 se pide por encargo: 3 a 6 semanas de entrega. Conviene ordenarlo primero.</li>
+    <li>Ajustes de cámara: 4K a 60 cuadros, obturador 1/120, ISO 800, f/4 a f/5.6, balance fijo 5600 K, polarizador girado toma por toma.</li>
+  </ul>
 </section>
 
 <div class="foot">
-  <p>Fuentes de precios: chimeralighting.com, kayelites.com, thelafirm.com, aputure.com, amarancreators.com, nanliteus.com, msegrip.com, kupogrip.com, store.dji.com, edelkrone.com, smallhd.com, fjwestcott.com, canvasgrip.com y fichas de B&amp;H, Adorama y Sweetwater con fecha 2026. Análisis del reel: instagram.com/reel/DXueW7-DQWY.</p>
+  <p>Fuentes de precios: chimeralighting.com, kayelites.com, aputure.com, amarancreators.com, nanliteus.com, msegrip.com, kupogrip.com, store.dji.com, edelkrone.com, canvasgrip.com y fichas de B&amp;H, Adorama y Sweetwater con fecha 2026. Reel de referencia: instagram.com/reel/DXueW7-DQWY.</p>
 </div>
 
 </div>
